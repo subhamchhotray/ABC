@@ -1,0 +1,115 @@
+1. create table customer(cno int,cname char(30),sal int,city char(30));
+
+2. insert into customer values(101,'abc',12000,'delhi');
+
+3. insert into customer values(102,'kkc',14000,'kolkata');
+
+4. insert into customer values(103,'adc',16000,'delhi');
+
+5. insert into customer values(104,'adkkkc',49000,'punjab');
+
+
+
+6. insert into customer values(105,'alkkc',25000,'punjab');
+
+7. insert into customer values(106,'dkk',25000,'punjab');
+
+8. insert into customer values(107,'jjj',25000,'punjab');
+
+9. insert into customer values(109,'abc',12000,'delhi');
+
+10 set linesize 150;
+  
+11. select * from customer;
+
+12. select sal from customer;
+
+13. select sal,city from cutomer;
+
+14. select * from customer where city='delhi';
+
+15. select * from customer where city in ('kolkata','punjab');
+
+16. select * from customer where city not in ('kolkata','punjab');
+
+17. select * from customer where sal between 20000 and 50000;
+
+18. select * from customer where(city='delhi' or city='up');
+
+19. select * from customer where(city='delhi' and  sal=12000);
+
+20. select * from customer where cname like 'a%';
+
+21. select * from customer where trim(cname) like 'a%';
+
+22. select * from customer where cname like 'abc%';
+
+23. select * from customer where cname not like 'abc%';
+
+24. select * from customer where trim(cname) like '_kk';
+
+25. select * from customer where cname like '_kk%';
+
+26. select * from customer where trim(cname) like '___';
+
+27. select * from customer where trim(cname) like '___%';
+
+28. select * from customer where cname like 'abc\%___';
+
+29. select sum(sal) from customer group by city;
+
+30. update customer set cname ='keshav where cno=106;
+
+31. delete from customer;
+
+32. delete from customer where cno=106;
+
+33. create table dept(eno int,dno int,ename char(30),dept char(30));
+
+34. insert into dept values(101,'401','abc','mkt');
+
+35. insert into dept values(102,'402','akk','sales');
+
+36. select e.eno,e.ename,d.dno,d.dept from emp e,dept d where e.sales=12000 and e.eno=d.eno;
+
+37. select sum(sal) from customer group by city having sal>10000;
+
+38. select AVG(salary),MAX(salary),MIN(salary),SUM(salary) FROM employees WHERE job_id LIKE '%REP%';
+
+39. select min(hire_date),max(hire_date) from employees;
+
+40. select count(*) from employees where department_id = 50;
+ 
+41. select count(commision_pct) from employees where department_id = 80;
+
+42. select count(distinct department_id) from employees;
+
+43. select department_id,AVG(salary) from employees group by department_id;
+
+44. select department_id,job_id,sum(salary) from employees where department_id>40 group by department_id,job_id order by department_id;
+ 
+45. select department_id,max(salary) from employees group by department_id having max(salary)>10000;
+
+46. select job_id,sum(salary) payroll from employees where job_id not like '%REP%' group by job_id having sum(salary)>13000 order by sum(salary);
+
+47. select max(avg(salary)) from employees group by department_id;
+
+48. select last_name,salary from employees where salary > (select salary from employees where last_name='Abel');
+
+49. select last_name,job_id,salary from employees where job_id = (select job_id from employees where last_name='Seo') and salary >(select salary from employees where last_name='Seo'); 
+
+50. select last_name,job_id,salary from employees where salary = (select min(salary) from employees);
+
+51. select department_id,min(salary) from employees group by department_id having min(salary) > (select min(salary) from employees where department_id=50);
+
+52. select employee_id,last_name,job_id,salary from employees where salary< any (select salary from employees where job_id = 'IT_PROG') AND job_id <> 'IT_PROG' ;
+
+53. select employee_id,last_name,job_id,salary from employees where salary< all (select salary from employees where job_id = 'IT_PROG') AND job_id <> 'IT_PROG' ;
+
+54. select SUM(salary) FROM employees WHERE job_id LIKE '%REP%';
+
+55. select MIN(salary) FROM employees WHERE job_id LIKE '%REP%';
+
+56. select MAX(salary) FROM employees WHERE job_id LIKE '%REP%';
+
+57.  select AVG(salary),MAX(salary),MIN(salary),SUM(salary) FROM employees WHERE job_id LIKE '%REP%';
