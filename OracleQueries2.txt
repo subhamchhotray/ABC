@@ -1,0 +1,89 @@
+1.	savepoint A8;
+
+2.	update e set eno='33' where eno='eee';
+
+3.	rollback to A8;
+
+4.	Select * from e;
+
+5.	select sysdate from dual;
+
+6.	alter table emp modify ename varchar(20);
+
+7.	alter table emp add education varchar(20);
+
+
+8.	create table Teacher(tno int,tname char(30),sal int,city char(30),doj date);
+
+9.	insert into Teacher values(101,'abc',12000,'delhi','23-Dec-1998');
+
+10.	insert into Teacher values(102,'akk',14000,'kolkata','03-Jan-2001');
+
+11.	insert into Teacher values(103,'pqr',15000,'delhi','19-Dec-1998');
+
+12.	insert into Teacher values(105,'abckk',42000,'punjab','05-March-2000');
+
+13.	insert into Teacher values(106,'jjj',25000,'punjab);
+
+14.	insert into Teacher values(107,'dkk',25000,'punjab');
+
+15.	insert into Teacher values(109,'abc',12000,'delhi');
+
+16.	select * from Teacher;
+
+17.	select * from Teacher where doj > '31-Dec-1998';
+
+18.	select * from Teacher where doj > '31-Dec-1998' and doj<'01-jan-2001';
+
+19.	select tname, doj+30 from Teacher;
+
+20.	create table dept(tno int,dno int,tname char(30),dept char(30));
+
+21.	select * from dept;
+
+22.	insert into dept values(101,401,'abc','mkt');
+
+23.	insert into dept values(102,402,'akk','sales');
+
+24.	insert into dept values(108,402,'akk','sales');
+
+25.	select * from Teacher cross join dept;
+
+26.	select * from Teacher inner join dept on Teacher.tno=dept.tno;
+
+27.	select * from Teacher left outer join dept on(Teacher.tno=dept.tno) or Teacher.tno=dept.tno;
+
+28.	select * from Teacher right outer join dept on(Teacher.tno=dept.tno) or Teacher.tno=dept.tno;
+
+29.	select * from Teacher full outer join dept on Teacher.tno=dept.tno;
+
+30.	select e.tno,e.tname,d.dno,d.dept from Teacher e,dept d where e.sal=12000 and e.tno=d.tno;
+
+31.	constraint pk primary key(eno);
+
+32.	alter table e drop constarint pk;
+
+33.	create table e2(eno int primary key,ename char(30));
+
+34.	create table e3(eno int,ename char(30),constraint pk primary key(eno));
+
+35.	alter table dept add constraint fk foriegn key(eno);
+
+36.	alter table dept drop constraint fk;
+
+37.	create table dept(dno char(20),eno int,constraint fk foreign key(eno) references e2(eno));
+
+38.	alter table e drop constarint fk;
+
+39.	create table suppliers(supplier_id numeriv(4),supplier_name varchar2(50),constraint check_supplier_id check(supplier_id between 100 and 9999);
+
+
+
+
+
+
+
+
+
+
+
