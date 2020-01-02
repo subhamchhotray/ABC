@@ -1,0 +1,16 @@
+1.	select * from employees where salary>10000;
+2.	select * from employees where employee_id='150' or employee_id='160';
+3.	select first_name, salary, commission_pct, hire_date from employees where salary<10000;
+4.	SELECT JOB_TITLE, MAX_SALARY-MIN_SALARY DIFFERENCE FROM JOBS WHERE MAX_SALARY BETWEEN 10000 AND 20000;
+5.	select * from employees order by job_id desc;
+6.	select * from employees where first_name like ('S%') or last_name like ('S%');
+7.	select * from employees where to_char(hire_date,'mon')='may';
+8.	SELECT FIRST_NAME, HIRE_DATE, FLOOR((SYSDATE-HIRE_DATE)/365)FROM EMPLOYEES
+9.	select manager_id, count(employee_id) as emp_count from employees group by manager_id order by emp_count desc;
+10.	select avg(salary) from employees where commission_pct is not null group by department_id;
+11.	select job_id, avg(salary) from employees group by job_id having avg(salary)>10000;
+12.	select distinct department_id from employees group by department_id, manager_id having count(employee_id) >= 5;
+13.	select department_id, count(employee_id) as emp_count from employees group by department_id;
+14.	select d.department_name,e.first_name,l.city from departments d join employees e on(d.manager_id = e.employee_id) join locations l using (location_id);
+15.	select l.city, d.department_name from locations l join departments d on (l.location_id = d.location_id);
+
