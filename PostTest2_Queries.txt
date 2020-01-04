@@ -1,0 +1,9 @@
+1.select * from emp inner join dept1 on emp.dept_no=dept1.dept_no where(salary>20000) and location='mumbai';
+
+2.select count(distinct dept_id) as count from emp12 where last_name='sachin';
+
+3.SELECT FIRST_NAME, HIRE_DATE FROM EMPLOYEES WHERE JOB_ID IN ('IT_PROG', 'SA_MAN');
+
+4.SELECT DEPARTMENT_ID FROM EMPLOYEES WHERE COMMISSION_PCT IS NOT NULL GROUP BY DEPARTMENT_ID HAVING COUNT(COMMISSION_PCT)>5;
+
+5.SELECT * FROM EMPLOYEES WHERE TO_CHAR(HIRE_DATE, 'MON')= 'MAY';
